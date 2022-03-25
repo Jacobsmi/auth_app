@@ -1,13 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import { Auth0Provider } from '@auth0/auth0-react';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import { Auth0Provider } from "@auth0/auth0-react";
 
 const domain = process.env.REACT_APP_AUTH0_DOMAIN;
 const clientId = process.env.REACT_APP_CLIENT_ID;
 
-if(!(domain && clientId)){
+if (!(domain && clientId)) {
   throw new Error("Bad Auth0 configuration");
 }
 
@@ -19,8 +19,8 @@ ReactDOM.render(
       redirectUri={"http://localhost:3000"}
       audience={"http://localhost:5000"}
     >
-    <App />
+      <App />
     </Auth0Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
